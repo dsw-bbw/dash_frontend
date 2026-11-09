@@ -12,9 +12,7 @@ function Hardware() {
 
     return (
         <>
-            {Object.entries(hardware).map(([key, value]) => (
-                <p key={key}>{key}: {value}</p>
-            ))}
+            <p>{hardware.totalMem}</p>
         </>
     )
 }
