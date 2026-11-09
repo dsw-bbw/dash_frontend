@@ -7,7 +7,7 @@ function App() {
     return (
         <BrowserRouter>
             <nav>
-                <Link to"/hardware">Hardware</Link>
+                <Link to="/hardware">Hardware</Link>
             </nav>
 
             <Routes>
