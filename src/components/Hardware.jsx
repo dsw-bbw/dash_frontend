@@ -17,7 +17,7 @@ function Hardware() {
             <p>CPU: {hardware.cpuPercent} %</p>
             <p>RAM gesamt: {hardware.totalMem} MB</p>
             <p>RAM frei: {hardware.availableMem} MB</p>
-            <p>Speicher: {hardware.diskStorage} MB</p>
+            <p>Speicher: {Math.floor((hardware.diskStorage) / 1024)} GB</p>
         </>
     );
 }
