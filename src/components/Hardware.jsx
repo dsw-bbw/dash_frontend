@@ -12,9 +12,12 @@ function Hardware() {
 
     return (
         <>
-            <p>{hardware.totalMem}</p>
+            <p>CPU: {hardware.cpuPercent} %</p>
+            <p>RAM gesamt: {hardware.totalMem} MB</p>
+            <p>RAM frei: {hardware.availableMem} MB</p>
+            <p>Speicher: {hardware.diskStorage} MB</p>
         </>
-    )
+    );
 }
 
 export default Hardware;
