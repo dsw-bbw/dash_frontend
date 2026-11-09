@@ -6,7 +6,7 @@ function Hardware() {
 
     useEffect(() => {
         get("/api/hardware")
-            .then(setHardware)
+            .then(r => setHardware(JSON.stringify(r)))
             .catch(err => console.error(err))
     }, []);
 
