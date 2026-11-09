@@ -2,11 +2,11 @@ import {useEffect, useState} from "react";
 import {get} from "../api.js";
 
 function Hardware() {
-    const [hardware, setHardware] = useState([]);
+    const [hardware, setHardware] = useState({});
 
     useEffect(() => {
         get("/api/hardware")
-            .then(r => setHardware(JSON.stringify(r)))
+            .then(setHardware)
             .catch(err => console.error(err))
     }, []);
 
