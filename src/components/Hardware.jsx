@@ -5,9 +5,11 @@ function Hardware() {
     const [hardware, setHardware] = useState({});
 
     useEffect(() => {
-        get("/api/hardware")
-            .then(setHardware)
-            .catch(err => console.error(err))
+        const interval = setInterval(() => {
+            get("/api/hardware")
+                .then(setHardware)
+                .catch(err => console.error(err))
+        }, 1000)
     }, []);
 
     return (
