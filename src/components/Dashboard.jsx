@@ -1,5 +1,6 @@
-import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Hardware from "./Hardware.jsx";
+import HomePage from "./HomePage.jsx";
 import Navbar from "./Navbar.jsx";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
             <Navbar sites={sites}/>
 
             <Routes>
+                <Route path="/" element={<HomePage />}/>
                 <Route path="/hardware" element={<Hardware />}/>
             </Routes>
         </BrowserRouter>
