@@ -1,5 +1,6 @@
 import {Paper, Textarea} from "@mantine/core";
 import {useEffect, useState} from "react";
+import {get} from "../api.js";
 
 function HomePage() {
     const [os, setOs] = useState({});
@@ -8,7 +9,7 @@ function HomePage() {
         setInterval(() => {
             get("/api/os")
                 .then(setOs)
-                .catch(err => console.error(err))
+                .catch(console.error)
         }, 1000)
     }, []);
 
