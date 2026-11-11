@@ -13,6 +13,25 @@ function HomePage() {
         }, 1000)
     }, []);
 
+    function getTime() {
+        let rest = Math.floor(os.uptime);
+        const units = [
+            ["d", 86400],
+            ["h", 3600],
+            ["m", 60],
+            ["s", 1],
+        ];
+
+        const parts = [];
+        for (const [label, seconds] of units) {
+            const value = Math.floor(rest / seconds);
+            rest %= seconds;
+            if (value > 0) parts.push(value + label);
+        }
+
+        return parts.join(" ") || "0s";
+    }
+
     return (
         <>
             <Paper withBorder radius="xl" px="lg" py="sm" m="md">
@@ -20,7 +39,7 @@ function HomePage() {
                     label="Time Running"
                     variant="outlined"
                     radius="xl"
-                    value={os.timeRunning}
+                    value={getTime()}
                     readOnly
                 />
             </Paper>
