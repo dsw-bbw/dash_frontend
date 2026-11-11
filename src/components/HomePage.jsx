@@ -21,7 +21,7 @@ function HomePage() {
                     variant="outlined"
                     radius="xl"
                     value={os.timeRunning}
-                    readonly
+                    readOnly
                 />
             </Paper>
         </>
