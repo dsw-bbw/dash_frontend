@@ -1,20 +1,11 @@
 import {Paper, Textarea} from "@mantine/core";
-import {useEffect, useState} from "react";
-import {get} from "../api.js";
+import {useLiveData} from "../useLiveData.jsx";
 
 function HomePage() {
-    const [os, setOs] = useState({});
-
-    useEffect(() => {
-        setInterval(() => {
-            get("/api/os")
-                .then(setOs)
-                .catch(console.error)
-        }, 1000)
-    }, []);
+    const uptime = useLiveData("/api/os", "uptime", 0);
 
     function getTime() {
-        let rest = Math.floor(os.uptime);
+        let rest = Math.floor(uptime);
         const units = [
             ["d", 86400],
             ["h", 3600],
