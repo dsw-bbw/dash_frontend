@@ -5,8 +5,8 @@ import Navbar from "./Navbar.jsx";
 
 function App() {
     const sites = [
-        { name: "Home", path: "/" },
-        { name: "Hardware", path: "/hardware" }
+        { name: "Home", path: "/", element: <HomePage/> },
+        { name: "Hardware", path: "/hardware", element: <Hardware /> }
     ]
 
     return (
@@ -14,8 +14,9 @@ function App() {
             <Navbar sites={sites}/>
 
             <Routes>
-                <Route path="/" element={<HomePage />}/>
-                <Route path="/hardware" element={<Hardware />}/>
+                {sites.map((site) => (
+                    <Route path={site.path} element={site.element}/>
+                ))}
             </Routes>
         </BrowserRouter>
     );
